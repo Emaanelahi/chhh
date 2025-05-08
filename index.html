@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pakistan vs India Armed Forces</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-5">Compare Pakistani and Indian Armed Forces</h2>
+
+
+    <div class="row justify-content-center my-4">
+      <div class="col-md-6">
+        <select id="branchSelect" class="form-select">
+          <option selected disabled>Choose Armed Force</option>
+          <option value="airforce">Air Force</option>
+          <option value="army">Army</option>
+          <option value="navy">Navy</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-around align-items-start">
+      <div class="col-md-5 text-center">
+        <img src="https://flagcdn.com/pk.svg" alt="Pakistan Flag" class="img-fluid mb-2 flag-img" />
+        <h4 class="mb-3">Pakistan </h4>
+        <select id="pakJetSelect" class="form-select mb-3 d-none">
+          <option selected disabled>Choose Pakistani Jet</option>
+          <option value="jf17">JF-17 Thunder</option>
+          <option value="f16">F-16</option>
+          <option value="mirage3">Mirage III</option>
+          <option value="mirage5">Mirage V</option>
+          <option value="f7">F-7PG</option>
+        </select>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="https://flagcdn.com/in.svg" alt="India Flag" class="img-fluid mb-2 flag-img" />
+        <h4 class="mb-3">India </h4>
+        <select id="indiaJetSelect" class="form-select mb-3 d-none">
+          <option selected disabled>Choose Indian Jet</option>
+          <option value="rafale">Rafale</option>
+          <option value="su30">Sukhoi Su-30MKI</option>
+          <option value="tejas">HAL Tejas</option>
+          <option value="mig29">MiG-29</option>
+          <option value="mirage2000">Mirage 2000</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="comparisonResult" class="mt-4 text-center"></div>
+  </div>
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>

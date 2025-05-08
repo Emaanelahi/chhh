@@ -1,0 +1,23 @@
+body {
+    background-color: #f8faf9;
+    /* background-image: url("../images/pexels-maruf-karakaya-759273907-29329908.jpg"); */
+}
+    
+  .card {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+  }
+  .card:hover {
+    transform: scale(1.03);
+  }
+  .flag-img {
+    max-height: 80px;
+    border-radius: 8px;
+  }
+  .form-select {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
