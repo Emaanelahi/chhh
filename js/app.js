@@ -1,3 +1,4 @@
+
 const branchSelect = document.getElementById("branchSelect");
 const indiaJetSelect = document.getElementById("indiaJetSelect");
 const pakJetSelect = document.getElementById("pakJetSelect");
@@ -43,36 +44,69 @@ function showJetComparison(indianJet, pakJet) {
             range: "4,220 km",
             origin: "USA",
         },
-        mirage: {
+        mirage3: {
             name: "Mirage III",
             speed: "2.2 Mach",
             range: "2,400 km",
             origin: "France",
         },
+        mirage5: {
+            name: "Mirage V",
+            speed: "2.2 Mach",
+            range: "2,100 km",
+            origin: "France",
+        },
+        f7: {
+            name: "F-7PG",
+            speed: "2.0 Mach",
+            range: "1,500 km",
+            origin: "China",
+        },
+        tejas: {
+            name: "HAL Tejas",
+            speed: "1.6 Mach",
+            range: "3,000 km",
+            origin: "India",
+        },
+        mig29: {
+            name: "MiG-29",
+            speed: "2.25 Mach",
+            range: "2,100 km",
+            origin: "Russia",
+        },
+        mirage2000: {
+            name: "Mirage 2000",
+            speed: "2.2 Mach",
+            range: "1,550 km",
+            origin: "France",
+        },
     };
-
 
     const india = data[indianJet];
     const pak = data[pakJet];
 
-    comparisonResult.innerHTML = `
-  <div class="row text-center">
-    <div class="col-md-6 border-end">
-      <h3>${pak.name}</h3>
-      <p><strong>Speed:</strong> ${pak.speed}</p>
-      <p><strong>Range:</strong> ${pak.range}</p>
-      <p><strong>Origin:</strong> ${pak.origin}</p>
-      ${pak.note ? `<p class="text-success fw-semibold">${pak.note}</p>` : ""}
-    </div>
-    <div class="col-md-6">
-      <h3>${india.name}</h3>
-      <p><strong>Speed:</strong> ${india.speed}</p>
-      <p><strong>Range:</strong> ${india.range}</p>
-      <p><strong>Origin:</strong> ${india.origin}</p>
-    </div>
-  </div>
-`;
+    if (!india || !pak) {
+        comparisonResult.innerHTML = `<p class="text-danger">Comparison data not available for one or both selected jets.</p>`;
+        return;
+    }
 
+    comparisonResult.innerHTML = `
+      <div class="row text-center">
+        <div class="col-md-6 border-end">
+          <h3>${pak.name}</h3>
+          <p><strong>Speed:</strong> ${pak.speed}</p>
+          <p><strong>Range:</strong> ${pak.range}</p>
+          <p><strong>Origin:</strong> ${pak.origin}</p>
+          ${pak.note ? `<p class="text-success fw-semibold">${pak.note}</p>` : ""}
+        </div>
+        <div class="col-md-6">
+          <h3>${india.name}</h3>
+          <p><strong>Speed:</strong> ${india.speed}</p>
+          <p><strong>Range:</strong> ${india.range}</p>
+          <p><strong>Origin:</strong> ${india.origin}</p>
+        </div>
+      </div>
+    `;
 }
 
 function showArmyComparison() {
@@ -141,14 +175,19 @@ function showNavyComparison() {
       `;
 }
 
+
 indiaJetSelect.addEventListener("change", () => {
     const iJet = indiaJetSelect.value;
     const pJet = pakJetSelect.value;
-    if (iJet && pJet) showJetComparison(iJet, pJet);
+    if (iJet && pJet) {
+        showJetComparison(iJet, pJet);
+    }
 });
 
 pakJetSelect.addEventListener("change", () => {
     const iJet = indiaJetSelect.value;
     const pJet = pakJetSelect.value;
-    if (iJet && pJet) showJetComparison(iJet, pJet);
-})
+    if (iJet && pJet) {
+        showJetComparison(iJet, pJet);
+    }
+});
